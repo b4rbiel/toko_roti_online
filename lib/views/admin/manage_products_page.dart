@@ -12,12 +12,12 @@ class _ManageProductsPageState extends State<ManageProductsPage> {
     {
       'name': 'Roti Tawar',
       'price': 10000,
-      'image': 'assets/images/roti_tawar.png',
+      'image': 'assets/images/roti_tawar.jpg',
     },
     {
       'name': 'Roti Coklat',
       'price': 12000,
-      'image': 'assets/images/roti_coklat.png',
+      'image': 'assets/images/roti_coklat.jpg',
     },
     {
       'name': 'Roti Keju',
@@ -42,7 +42,7 @@ class _ManageProductsPageState extends State<ManageProductsPage> {
     {
       'name': 'Roti Susu',
       'price': 15500,
-      'image': 'assets/images/roti_susu.png',
+      'image': 'assets/images/roti_susu.jpg',
     },
     {'name': 'Kopi', 'price': 5000, 'image': 'assets/images/kopi.jpg'},
     {
@@ -70,7 +70,10 @@ class _ManageProductsPageState extends State<ManageProductsPage> {
           ),
           title: const Text(
             'Tambah Produk',
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.brown),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.orangeAccent,
+            ),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -100,7 +103,7 @@ class _ManageProductsPageState extends State<ManageProductsPage> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown,
+                backgroundColor: Colors.orangeAccent,
                 foregroundColor: Colors.white,
               ),
               onPressed: () {
@@ -171,14 +174,14 @@ class _ManageProductsPageState extends State<ManageProductsPage> {
       backgroundColor: const Color(0xFFFFF8E7),
       appBar: AppBar(
         title: const Text('Kelola Produk'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Colors.brown,
-        icon: const Icon(Icons.add),
-        label: const Text("Tambah Produk"),
+        backgroundColor: Colors.orangeAccent,
+        icon: const Icon(Icons.add, color: Colors.white,),
+        label: const Text("Tambah Produk", style: TextStyle(color: Colors.white),),
         onPressed: _showAddProductDialog,
       ),
       body: Padding(
@@ -188,7 +191,7 @@ class _ManageProductsPageState extends State<ManageProductsPage> {
                 ? const Center(
                   child: Text(
                     "Belum ada produk",
-                    style: TextStyle(color: Colors.brown, fontSize: 16),
+                    style: TextStyle(color: Colors.orangeAccent, fontSize: 16),
                   ),
                 )
                 : ListView.builder(
@@ -219,7 +222,7 @@ class _ManageProductsPageState extends State<ManageProductsPage> {
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
-                            color: Colors.brown,
+                            color: Colors.orangeAccent,
                           ),
                         ),
                         subtitle: Padding(

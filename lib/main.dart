@@ -14,7 +14,7 @@ class TokoRotiApp extends StatelessWidget {
       title: 'Toko Roti Online',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.brown),
-      initialRoute: AppRoutes.login, //  mulai dari halaman login
+      initialRoute: AppRoutes.splash, //  mulai dari halaman login
       routes: AppRoutes.routes,
     );
   }

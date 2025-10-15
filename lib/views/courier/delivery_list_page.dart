@@ -36,7 +36,7 @@ class DeliveryListPage extends StatelessWidget {
       backgroundColor: const Color(0xFFFFF8E7),
       appBar: AppBar(
         title: const Text('Daftar Pengiriman'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
         elevation: 4,
@@ -69,7 +69,10 @@ class DeliveryListPage extends StatelessWidget {
               elevation: 5,
               margin: const EdgeInsets.symmetric(vertical: 8),
               child: ListTile(
-                leading: const Icon(Icons.local_shipping, color: Colors.brown),
+                leading: const Icon(
+                  Icons.local_shipping,
+                  color: Colors.orangeAccent,
+                ),
                 title: Text(
                   "Pesanan ${d['orderId']}",
                   style: const TextStyle(fontWeight: FontWeight.bold),

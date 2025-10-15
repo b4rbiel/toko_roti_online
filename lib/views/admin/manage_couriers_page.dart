@@ -37,7 +37,10 @@ class _ManageCouriersPageState extends State<ManageCouriersPage> {
           ),
           title: const Text(
             "Tambah Kurir",
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.brown),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.orangeAccent,
+            ),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -70,7 +73,7 @@ class _ManageCouriersPageState extends State<ManageCouriersPage> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown,
+                backgroundColor: Colors.orangeAccent,
                 foregroundColor: Colors.white,
               ),
               onPressed: () {
@@ -139,14 +142,16 @@ class _ManageCouriersPageState extends State<ManageCouriersPage> {
       backgroundColor: const Color(0xFFFFF8E7),
       appBar: AppBar(
         title: const Text('Kelola Kurir'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Colors.brown,
-        icon: const Icon(Icons.add),
-        label: const Text("Tambah Kurir"),
+        backgroundColor: Colors.orangeAccent,
+        icon: const Icon(Icons.add, color: Colors.white), 
+        label: const Text("Tambah Kurir", 
+        style: TextStyle(color: Colors.white),
+        ),
         onPressed: _showAddCourierDialog,
       ),
       body: Padding(
@@ -156,7 +161,7 @@ class _ManageCouriersPageState extends State<ManageCouriersPage> {
                 ? const Center(
                   child: Text(
                     "Belum ada kurir terdaftar",
-                    style: TextStyle(color: Colors.brown, fontSize: 16),
+                    style: TextStyle(color: Colors.orangeAccent, fontSize: 16),
                   ),
                 )
                 : ListView.builder(
@@ -178,7 +183,7 @@ class _ManageCouriersPageState extends State<ManageCouriersPage> {
                         contentPadding: const EdgeInsets.all(12),
                         leading: CircleAvatar(
                           radius: 28,
-                          backgroundColor: Colors.brown.withOpacity(0.1),
+                          backgroundColor: Colors.orangeAccent.withOpacity(0.1),
                           backgroundImage: AssetImage(courier['image']),
                         ),
                         title: Text(
@@ -186,7 +191,7 @@ class _ManageCouriersPageState extends State<ManageCouriersPage> {
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
-                            color: Colors.brown,
+                            color: Colors.orangeAccent,
                           ),
                         ),
                         subtitle: Padding(
@@ -252,7 +257,7 @@ class _ManageCouriersPageState extends State<ManageCouriersPage> {
               "Edit Kurir",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.brown,
+                color: Colors.orangeAccent,
               ),
             ),
             content: Column(
@@ -289,7 +294,7 @@ class _ManageCouriersPageState extends State<ManageCouriersPage> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.brown,
+                  backgroundColor: Colors.orangeAccent,
                   foregroundColor: Colors.white,
                 ),
                 onPressed: () {

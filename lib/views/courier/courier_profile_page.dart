@@ -10,7 +10,7 @@ class CourierProfilePage extends StatelessWidget {
       backgroundColor: const Color(0xFFFFF8E7), // warna cream lembut
       appBar: AppBar(
         title: const Text('Profil Kurir'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         elevation: 3,
         centerTitle: true,
@@ -25,7 +25,7 @@ class CourierProfilePage extends StatelessWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.brown.withOpacity(0.3),
+                    color: Colors.orangeAccent.withOpacity(0.3),
                     blurRadius: 10,
                     offset: const Offset(0, 5),
                   ),
@@ -33,7 +33,7 @@ class CourierProfilePage extends StatelessWidget {
               ),
               child: const CircleAvatar(
                 radius: 60,
-                backgroundImage: AssetImage('assets/images/photo_asih.png'),
+                backgroundImage: AssetImage('assets/images/kurirdata.jpg'),
                 backgroundColor: Colors.white,
               ),
             ),
@@ -42,11 +42,11 @@ class CourierProfilePage extends StatelessWidget {
 
             // Nama Kurir
             const Text(
-              'Keyla Zahra',
+              'Carl Stephan',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Colors.brown,
+                color: Colors.orangeAccent,
               ),
             ),
             const SizedBox(height: 5),
@@ -70,7 +70,7 @@ class CourierProfilePage extends StatelessWidget {
                     ProfileInfoRow(
                       icon: Icons.phone,
                       label: "Nomor Telepon",
-                      value: "0812-9355-1200",
+                      value: "0812-9243-1442",
                     ),
                     Divider(),
                     ProfileInfoRow(
@@ -88,7 +88,7 @@ class CourierProfilePage extends StatelessWidget {
                     ProfileInfoRow(
                       icon: Icons.star,
                       label: "Rating",
-                      value: "4.9 / 5",
+                      value: "4.7 / 5",
                     ),
                   ],
                 ),
@@ -100,8 +100,8 @@ class CourierProfilePage extends StatelessWidget {
             // Tombol Logout
             OutlinedButton.icon(
               style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.brown,
-                side: const BorderSide(color: Colors.brown),
+                foregroundColor: Colors.orangeAccent,
+                side: const BorderSide(color: Colors.orangeAccent),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 50,
                   vertical: 14,
@@ -146,7 +146,7 @@ class ProfileInfoRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: Colors.brown),
+        Icon(icon, color: Colors.orangeAccent),
         const SizedBox(width: 15),
         Expanded(
           child: Text(

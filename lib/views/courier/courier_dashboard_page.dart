@@ -10,7 +10,7 @@ class CourierDashboardPage extends StatelessWidget {
       backgroundColor: const Color(0xFFFFF8E7), // warna cream lembut
       appBar: AppBar(
         title: const Text("Dashboard Kurir"),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
         elevation: 3,
@@ -25,7 +25,7 @@ class CourierDashboardPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Colors.brown,
+                color: Colors.orangeAccent,
               ),
             ),
             const SizedBox(height: 8),
@@ -45,7 +45,7 @@ class CourierDashboardPage extends StatelessWidget {
                   _buildMenuCard(
                     context,
                     icon: Icons.local_shipping_outlined,
-                    color: Colors.orangeAccent,
+                    color: Colors.cyan,
                     title: "Daftar Pengiriman",
                     subtitle: "Lihat semua pesanan yang harus dikirim",
                     onTap: () {
@@ -112,7 +112,7 @@ class CourierDashboardPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.brown.withOpacity(0.2),
+              color: Colors.orangeAccent.withOpacity(0.2),
               blurRadius: 6,
               offset: const Offset(0, 3),
             ),
@@ -134,7 +134,7 @@ class CourierDashboardPage extends StatelessWidget {
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
-                color: Colors.brown,
+                color: Colors.orangeAccent,
               ),
             ),
             const SizedBox(height: 6),

@@ -10,7 +10,7 @@ class ProductListPage extends StatelessWidget {
       {
         "name": "Roti Tawar",
         "price": 10000,
-        "image": "assets/images/roti_tawar.png",
+        "image": "assets/images/roti_tawar.jpg",
         "description":
             "Roti tawar lembut dan segar, cocok untuk sarapan pagi dengan selai.",
         "expired": "12/12/2025",
@@ -18,7 +18,7 @@ class ProductListPage extends StatelessWidget {
       {
         "name": "Roti Coklat",
         "price": 12000,
-        "image": "assets/images/roti_coklat.png",
+        "image": "assets/images/roti_coklat.jpg",
         "description":
             "Roti isi coklat manis dengan aroma lezat yang menggoda selera.",
         "expired": "08/12/2025",
@@ -34,7 +34,7 @@ class ProductListPage extends StatelessWidget {
       {
         "name": "Roti Susu",
         "price": 15500,
-        "image": "assets/images/roti_susu.png",
+        "image": "assets/images/roti_susu.jpg",
         "description":
             "Roti empuk dengan rasa susu yang manis dan lembut di mulut.",
         "expired": "10/12/2025",
@@ -66,8 +66,7 @@ class ProductListPage extends StatelessWidget {
         "name": "Teh Manis",
         "price": 5000,
         "image": "assets/images/teh_manis.jpg",
-        "description":
-            "teh yang diminum untuk menemani waktu luang saat bersantai.",
+        "description": "Teh manis yang nikmat, cocok diminum saat bersantai.",
         "expired": "25/12/2025",
       },
       {
@@ -75,7 +74,7 @@ class ProductListPage extends StatelessWidget {
         "price": 5000,
         "image": "assets/images/kopi.jpg",
         "description":
-            "kopi yang diminum untuk menemani waktu luang dan meningkatkan produktivitas.",
+            "Kopi nikmat untuk menemani waktu luang dan meningkatkan semangat.",
         "expired": "28/12/2025",
       },
     ];
@@ -84,7 +83,7 @@ class ProductListPage extends StatelessWidget {
       backgroundColor: const Color(0xFFFFF8E7),
       appBar: AppBar(
         title: const Text("Daftar Roti"),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
         elevation: 3,
@@ -94,60 +93,57 @@ class ProductListPage extends StatelessWidget {
         child: GridView.builder(
           itemCount: products.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // tampil dua kolom
-            childAspectRatio: 0.9, // ini pengatur tinggi card
+            crossAxisCount: 2,
+            childAspectRatio:
+                0.72, // rasio tinggi dikurangi agar tidak overflow
             crossAxisSpacing: 12,
             mainAxisSpacing: 12,
           ),
           itemBuilder: (context, index) {
             final product = products[index];
-            return InkWell(
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  AppRoutes.productDetail,
-                  arguments: product,
-                );
-              },
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                elevation: 5,
-                shadowColor: Colors.brown.withOpacity(0.3),
+            return Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              elevation: 5,
+              shadowColor: Colors.orangeAccent.withOpacity(0.3),
+              child: Padding(
+                padding: const EdgeInsets.all(6),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // Gambar produk
                     ClipRRect(
                       borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(15),
+                        top: Radius.circular(12),
                       ),
                       child: Image.asset(
                         product['image'] ?? 'assets/images/roti_tawar.png',
-                        height: 120,
+                        height: 100,
                         width: double.infinity,
                         fit: BoxFit.cover,
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 8),
 
                     // Nama produk
                     Text(
-                      product['name'].toString(),
+                      product['name'],
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.brown,
+                        fontSize: 15,
+                        color: Colors.orangeAccent,
                       ),
                       textAlign: TextAlign.center,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
 
                     // Harga produk
                     Text(
                       "Rp ${product['price']}",
                       style: const TextStyle(
-                        fontSize: 14,
+                        fontSize: 13,
                         color: Colors.black87,
                       ),
                     ),
@@ -158,7 +154,7 @@ class ProductListPage extends StatelessWidget {
                       child: Text(
                         "Exp: ${product['expired']}",
                         style: const TextStyle(
-                          fontSize: 12,
+                          fontSize: 11,
                           color: Colors.redAccent,
                           fontStyle: FontStyle.italic,
                         ),
@@ -168,11 +164,8 @@ class ProductListPage extends StatelessWidget {
                     const Spacer(),
 
                     // Tombol Lihat Detail
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 8.0,
-                        vertical: 6,
-                      ),
+                    SizedBox(
+                      width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
                           Navigator.pushNamed(
@@ -182,15 +175,19 @@ class ProductListPage extends StatelessWidget {
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.brown,
+                          backgroundColor: Colors.orangeAccent,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          minimumSize: const Size(double.infinity, 40),
+                          padding: const EdgeInsets.symmetric(vertical: 8),
                         ),
                         child: const Text(
                           "Lihat Detail",
-                          style: TextStyle(color: Colors.white, fontSize: 14),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),

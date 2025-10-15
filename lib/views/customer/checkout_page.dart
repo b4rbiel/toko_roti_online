@@ -21,7 +21,7 @@ class CheckoutPage extends StatelessWidget {
       backgroundColor: const Color(0xFFFFF8E7), // warna cream lembut
       appBar: AppBar(
         title: const Text("Checkout"),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
         elevation: 3,
@@ -37,7 +37,7 @@ class CheckoutPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.brown,
+                color: Colors.orangeAccent,
               ),
             ),
             const SizedBox(height: 10),
@@ -89,7 +89,7 @@ class CheckoutPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.brown,
+                color: Colors.orangeAccent,
               ),
             ),
             const SizedBox(height: 10),
@@ -101,7 +101,7 @@ class CheckoutPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.brown.withOpacity(0.1),
+                    color: Colors.orangeAccent.withOpacity(0.1),
                     blurRadius: 5,
                     offset: const Offset(0, 3),
                   ),
@@ -109,7 +109,7 @@ class CheckoutPage extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  const Icon(Icons.location_on, color: Colors.brown),
+                  const Icon(Icons.location_on, color: Colors.orangeAccent),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Text(
@@ -138,7 +138,7 @@ class CheckoutPage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
-                    color: Colors.brown,
+                    color: Colors.orangeAccent,
                   ),
                 ),
                 Text(
@@ -165,7 +165,7 @@ class CheckoutPage extends StatelessWidget {
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown,
+                backgroundColor: Colors.orangeAccent,
                 minimumSize: const Size(double.infinity, 55),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -180,8 +180,11 @@ class CheckoutPage extends StatelessWidget {
             Center(
               child: OutlinedButton.icon(
                 style: OutlinedButton.styleFrom(
-                  foregroundColor: Colors.brown,
-                  side: const BorderSide(color: Colors.brown, width: 1.2),
+                  foregroundColor: Colors.orangeAccent,
+                  side: const BorderSide(
+                    color: Colors.orangeAccent,
+                    width: 1.2,
+                  ),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 40,
                     vertical: 12,

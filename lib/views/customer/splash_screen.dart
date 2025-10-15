@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen>
                 Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.brown[200],
+                    color: Colors.orangeAccent[200],
                   ),
                   padding: const EdgeInsets.all(24),
                   child: const Icon(
@@ -76,11 +76,11 @@ class _SplashScreenState extends State<SplashScreen>
 
                 // Nama aplikasi
                 const Text(
-                  "Toko Roti Online",
+                  "Butter Future",
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
-                    color: Colors.brown,
+                    color: Colors.orangeAccent,
                     letterSpacing: 1.2,
                   ),
                 ),
@@ -99,7 +99,7 @@ class _SplashScreenState extends State<SplashScreen>
                     const Text(
                       "by PPKD Jakarta Utara",
                       style: TextStyle(
-                        color: Colors.brown,
+                        color: Colors.orangeAccent,
                         fontSize: 14,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w500,

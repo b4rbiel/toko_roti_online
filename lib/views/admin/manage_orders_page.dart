@@ -1,8 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ManageOrdersPage extends StatelessWidget {
+class ManageOrdersPage extends StatefulWidget {
   const ManageOrdersPage({super.key});
+
+  @override
+  State<ManageOrdersPage> createState() => _ManageOrdersPageState();
+}
+
+class _ManageOrdersPageState extends State<ManageOrdersPage> {
+  // 🔹 List orders bisa diubah (bukan final)
+  List<Map<String, dynamic>> orders = [
+    {
+      'id': 'ORD001',
+      'customer': 'Asih',
+      'status': 'Pending',
+      'total': 35000,
+      'date': DateTime.now().subtract(const Duration(hours: 3)),
+    },
+    {
+      'id': 'ORD002',
+      'customer': 'Nopriadi',
+      'status': 'Dikirim',
+      'total': 50000,
+      'date': DateTime.now().subtract(const Duration(days: 1)),
+    },
+    {
+      'id': 'ORD003',
+      'customer': 'Lina',
+      'status': 'Selesai',
+      'total': 42000,
+      'date': DateTime.now().subtract(const Duration(days: 2)),
+    },
+  ];
 
   // 🔹 Warna status
   Color getStatusColor(String status) {
@@ -20,35 +50,11 @@ class ManageOrdersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> orders = [
-      {
-        'id': 'ORD001',
-        'customer': 'Asih',
-        'status': 'Pending',
-        'total': 35000,
-        'date': DateTime.now().subtract(const Duration(hours: 3)),
-      },
-      {
-        'id': 'ORD002',
-        'customer': 'Nopriadi',
-        'status': 'Dikirim',
-        'total': 50000,
-        'date': DateTime.now().subtract(const Duration(days: 1)),
-      },
-      {
-        'id': 'ORD003',
-        'customer': 'Lina',
-        'status': 'Selesai',
-        'total': 42000,
-        'date': DateTime.now().subtract(const Duration(days: 2)),
-      },
-    ];
-
     return Scaffold(
       backgroundColor: const Color(0xFFFFF8E7),
       appBar: AppBar(
         title: const Text('Kelola Pesanan'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
         elevation: 3,
@@ -61,7 +67,7 @@ class ManageOrdersPage extends StatelessWidget {
                   child: Text(
                     "Belum ada pesanan",
                     style: TextStyle(
-                      color: Colors.brown,
+                      color: Colors.orangeAccent,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                     ),
@@ -98,7 +104,7 @@ class ManageOrdersPage extends StatelessWidget {
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16,
-                                    color: Colors.brown,
+                                    color: Colors.orangeAccent,
                                   ),
                                 ),
                                 Chip(
@@ -120,7 +126,7 @@ class ManageOrdersPage extends StatelessWidget {
                               children: [
                                 const Icon(
                                   Icons.person_outline,
-                                  color: Colors.brown,
+                                  color: Colors.orangeAccent,
                                   size: 18,
                                 ),
                                 const SizedBox(width: 5),
@@ -137,7 +143,7 @@ class ManageOrdersPage extends StatelessWidget {
                               children: [
                                 const Icon(
                                   Icons.calendar_today_outlined,
-                                  color: Colors.brown,
+                                  color: Colors.orangeAccent,
                                   size: 16,
                                 ),
                                 const SizedBox(width: 5),
@@ -169,7 +175,6 @@ class ManageOrdersPage extends StatelessWidget {
                                 ),
                               ],
                             ),
-
                             const SizedBox(height: 12),
                             const Divider(height: 1),
 
@@ -180,11 +185,13 @@ class ManageOrdersPage extends StatelessWidget {
                                 TextButton.icon(
                                   icon: const Icon(
                                     Icons.visibility_outlined,
-                                    color: Colors.brown,
+                                    color: Colors.orangeAccent,
                                   ),
                                   label: const Text(
                                     "Detail",
-                                    style: TextStyle(color: Colors.brown),
+                                    style: TextStyle(
+                                      color: Colors.orangeAccent,
+                                    ),
                                   ),
                                   onPressed:
                                       () => _showOrderDetail(context, order),
@@ -200,7 +207,7 @@ class ManageOrdersPage extends StatelessWidget {
                                     style: TextStyle(color: Colors.blue),
                                   ),
                                   onPressed:
-                                      () => _changeOrderStatus(context, order),
+                                      () => _changeOrderStatus(context, index),
                                 ),
                               ],
                             ),
@@ -225,7 +232,7 @@ class ManageOrdersPage extends StatelessWidget {
             ),
             title: Text(
               "Detail Pesanan ${order['id']}",
-              style: const TextStyle(color: Colors.brown),
+              style: const TextStyle(color: Colors.orangeAccent),
             ),
             content: Column(
               mainAxisSize: MainAxisSize.min,
@@ -250,7 +257,8 @@ class ManageOrdersPage extends StatelessWidget {
   }
 
   // Ubah Status
-  void _changeOrderStatus(BuildContext context, Map<String, dynamic> order) {
+  void _changeOrderStatus(BuildContext context, int index) {
+    final order = orders[index];
     final statuses = ['Pending', 'Dikirim', 'Selesai'];
     String selected = order['status'] ?? 'Pending';
 
@@ -258,14 +266,14 @@ class ManageOrdersPage extends StatelessWidget {
       context: context,
       builder:
           (context) => StatefulBuilder(
-            builder: (context, setState) {
+            builder: (context, setDialogState) {
               return AlertDialog(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 title: Text(
                   "Ubah Status ${order['id']}",
-                  style: const TextStyle(color: Colors.brown),
+                  style: const TextStyle(color: Colors.orangeAccent),
                 ),
                 content: DropdownButton<String>(
                   value: selected,
@@ -276,7 +284,7 @@ class ManageOrdersPage extends StatelessWidget {
                             (s) => DropdownMenuItem(value: s, child: Text(s)),
                           )
                           .toList(),
-                  onChanged: (value) => setState(() => selected = value!),
+                  onChanged: (value) => setDialogState(() => selected = value!),
                 ),
                 actions: [
                   TextButton(
@@ -285,10 +293,13 @@ class ManageOrdersPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.brown,
+                      backgroundColor: Colors.orangeAccent,
                       foregroundColor: Colors.white,
                     ),
                     onPressed: () {
+                      setState(() {
+                        orders[index]['status'] = selected;
+                      });
                       Navigator.pop(context);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(

@@ -137,7 +137,7 @@ class _CourierTrackingPageState extends State<CourierTrackingPage> {
         Polyline(
           polylineId: const PolylineId("route"),
           points: polylinePoints,
-          color: Colors.brown,
+          color: Colors.orangeAccent,
           width: 5,
         ),
       );
@@ -150,14 +150,14 @@ class _CourierTrackingPageState extends State<CourierTrackingPage> {
       backgroundColor: const Color(0xFFFFF8E7),
       appBar: AppBar(
         title: const Text("Lacak Pengiriman"),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
       body:
           _currentPosition == null
               ? const Center(
-                child: CircularProgressIndicator(color: Colors.brown),
+                child: CircularProgressIndicator(color: Colors.orangeAccent),
               )
               : GoogleMap(
                 onMapCreated: (controller) => _mapController = controller,
@@ -176,9 +176,9 @@ class _CourierTrackingPageState extends State<CourierTrackingPage> {
             CameraUpdate.newLatLngZoom(_currentPosition!, 15),
           );
         },
-        backgroundColor: Colors.brown,
-        icon: const Icon(Icons.my_location),
-        label: const Text("Posisi Saya"),
+        backgroundColor: Colors.orangeAccent,
+        icon: const Icon(Icons.my_location, color: Colors.white),
+        label: const Text("Posisi Saya", style: TextStyle(color: Colors.white)),
       ),
     );
   }

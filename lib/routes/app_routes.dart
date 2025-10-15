@@ -48,7 +48,7 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> routes = {
     // CUSTOMER
-    // splash: (_) => const SplashScreen(),
+    splash: (_) => const SplashScreen(),
     login: (_) => const LoginPage(),
     register: (_) => const RegisterPage(),
     products: (_) => const ProductListPage(),

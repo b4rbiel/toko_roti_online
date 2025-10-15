@@ -20,7 +20,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
       backgroundColor: const Color(0xFFFFF8E7),
       appBar: AppBar(
         title: Text(product['name']),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -47,7 +47,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               style: const TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Colors.brown,
+                color: Colors.orangeAccent,
               ),
             ),
             const SizedBox(height: 8),
@@ -104,20 +104,20 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     if (quantity > 1) setState(() => quantity--);
                   },
                   icon: const Icon(Icons.remove_circle_outline),
-                  color: Colors.brown,
+                  color: Colors.orangeAccent,
                 ),
                 Text(
                   quantity.toString(),
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.brown,
+                    color: Colors.orangeAccent,
                   ),
                 ),
                 IconButton(
                   onPressed: () => setState(() => quantity++),
                   icon: const Icon(Icons.add_circle_outline),
-                  color: Colors.brown,
+                  color: Colors.orangeAccent,
                 ),
               ],
             ),
@@ -132,7 +132,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   Navigator.pushNamed(context, AppRoutes.cart);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.brown,
+                  backgroundColor: Colors.orangeAccent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(14),
                   ),

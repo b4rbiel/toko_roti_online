@@ -11,13 +11,13 @@ class CartPage extends StatelessWidget {
         "name": "Roti Coklat",
         "price": 12000,
         "qty": 2,
-        "image": "assets/images/roti_tawar.png",
+        "image": "assets/images/roti_coklat.jpg",
       },
       {
         "name": "Roti Keju",
         "price": 15000,
         "qty": 1,
-        "image": "assets/images/roti_tawar.png",
+        "image": "assets/images/roti_keju.png",
       },
     ];
 
@@ -30,7 +30,7 @@ class CartPage extends StatelessWidget {
       backgroundColor: const Color(0xFFFFF8E7), // warna cream lembut
       appBar: AppBar(
         title: const Text("Keranjang"),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
         elevation: 3,
@@ -65,7 +65,7 @@ class CartPage extends StatelessWidget {
                       item['name'].toString(),
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.brown,
+                        color: Colors.orangeAccent,
                       ),
                     ),
                     subtitle: Text(
@@ -92,7 +92,7 @@ class CartPage extends StatelessWidget {
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.brown.withOpacity(0.1),
+                  color: Colors.orangeAccent.withOpacity(0.1),
                   blurRadius: 8,
                   offset: const Offset(0, -2),
                 ),
@@ -108,7 +108,7 @@ class CartPage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.brown,
+                        color: Colors.orangeAccent,
                       ),
                     ),
                     Text(
@@ -132,7 +132,7 @@ class CartPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.brown,
+                    backgroundColor: Colors.orangeAccent,
                     minimumSize: const Size(double.infinity, 50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),

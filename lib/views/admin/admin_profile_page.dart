@@ -9,7 +9,7 @@ class AdminProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profil Admin'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -23,7 +23,7 @@ class AdminProfilePage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             const Text(
-              'Admin Toko Roti Online',
+              'Admin Butter Future',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
@@ -40,7 +40,7 @@ class AdminProfilePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: ListTile(
-                leading: const Icon(Icons.store, color: Colors.brown),
+                leading: const Icon(Icons.store, color: Colors.orangeAccent),
                 title: const Text('Nama Toko'),
                 subtitle: const Text('ButterFuture'),
               ),
@@ -52,7 +52,7 @@ class AdminProfilePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: ListTile(
-                leading: const Icon(Icons.phone, color: Colors.brown),
+                leading: const Icon(Icons.phone, color: Colors.orangeAccent),
                 title: const Text('Nomor Telepon'),
                 subtitle: const Text('+62 812-9355-8500'),
               ),
@@ -64,7 +64,25 @@ class AdminProfilePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: ListTile(
-                leading: const Icon(Icons.location_on, color: Colors.brown),
+                leading: const Icon(
+                  Icons.menu_open,
+                  color: Colors.orangeAccent,
+                ),
+                title: const Text('Jam Operasional'),
+                subtitle: const Text('08.00 s.d. 17.00'),
+              ),
+            ),
+            const SizedBox(height: 10),
+            Card(
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: ListTile(
+                leading: const Icon(
+                  Icons.location_on,
+                  color: Colors.orangeAccent,
+                ),
                 title: const Text('Alamat'),
                 subtitle: const Text(
                   'Jl. Raya Pemda, Kaum Pandak, Kel.Karadenan, Kec. Cibinong, Kab.Bogor, Jawa Barat',
@@ -76,7 +94,7 @@ class AdminProfilePage extends StatelessWidget {
             // Tombol Edit & Logout
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown,
+                backgroundColor: Colors.orangeAccent,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 40,
                   vertical: 12,
@@ -88,17 +106,20 @@ class AdminProfilePage extends StatelessWidget {
               onPressed: () {
                 // Navigasi ke halaman edit profil
               },
-              icon: const Icon(Icons.edit),
+              icon: const Icon(Icons.edit, color: Colors.white),
               label: const Text(
                 "Edit Profil",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             const SizedBox(height: 15),
             OutlinedButton.icon(
               style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.brown,
-                side: const BorderSide(color: Colors.brown),
+                foregroundColor: Colors.orangeAccent,
+                side: const BorderSide(color: Colors.orangeAccent),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 40,
                   vertical: 12,

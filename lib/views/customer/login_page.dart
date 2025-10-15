@@ -57,14 +57,18 @@ class _LoginPageState extends State<LoginPage> {
               // Logo Roti
               Column(
                 children: const [
-                  Icon(Icons.bakery_dining, size: 80, color: Colors.brown),
+                  Icon(
+                    Icons.bakery_dining,
+                    size: 80,
+                    color: Colors.orangeAccent,
+                  ),
                   SizedBox(height: 8),
                   Text(
-                    "Toko Roti Online",
+                    "Better Future",
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
-                      color: Colors.brown,
+                      color: Colors.orangeAccent,
                     ),
                   ),
                 ],
@@ -76,7 +80,10 @@ class _LoginPageState extends State<LoginPage> {
                 controller: _usernameController,
                 decoration: InputDecoration(
                   labelText: 'Username',
-                  prefixIcon: const Icon(Icons.person, color: Colors.brown),
+                  prefixIcon: const Icon(
+                    Icons.person,
+                    color: Colors.orangeAccent,
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -91,7 +98,10 @@ class _LoginPageState extends State<LoginPage> {
                 controller: _passwordController,
                 decoration: InputDecoration(
                   labelText: 'Password',
-                  prefixIcon: const Icon(Icons.lock, color: Colors.brown),
+                  prefixIcon: const Icon(
+                    Icons.lock,
+                    color: Colors.orangeAccent,
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -120,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: ElevatedButton(
                   onPressed: _login,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.brown,
+                    backgroundColor: Colors.orangeAccent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -142,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: const Text(
                   "Belum punya akun? Daftar di sini",
                   style: TextStyle(
-                    color: Colors.brown,
+                    color: Colors.orangeAccent,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

@@ -9,7 +9,7 @@ class OrderStatusPage extends StatelessWidget {
       case "Pending":
         return Colors.amber.shade600;
       case "Dikirim":
-        return Colors.brown.shade400;
+        return Colors.orangeAccent.shade400;
       case "Selesai":
         return Colors.green.shade600;
       default:
@@ -29,7 +29,7 @@ class OrderStatusPage extends StatelessWidget {
       backgroundColor: const Color(0xFFFFF8E7),
       appBar: AppBar(
         title: const Text("Status Pesanan"),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.orangeAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
         elevation: 3,
@@ -50,7 +50,7 @@ class OrderStatusPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.brown.withOpacity(0.1),
+                  color: Colors.orangeAccent.withOpacity(0.1),
                   blurRadius: 6,
                   offset: const Offset(0, 4),
                 ),
@@ -88,7 +88,7 @@ class OrderStatusPage extends StatelessWidget {
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
-                          color: Colors.brown,
+                          color: Colors.orangeAccent,
                         ),
                       ),
                       const SizedBox(height: 4),
@@ -115,14 +115,17 @@ class OrderStatusPage extends StatelessWidget {
                 ),
                 // Tombol detail
                 IconButton(
-                  icon: const Icon(Icons.chevron_right, color: Colors.brown),
+                  icon: const Icon(
+                    Icons.chevron_right,
+                    color: Colors.orangeAccent,
+                  ),
                   onPressed: () {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
                           "Detail Pesanan #${order["id"]} (${order["status"]})",
                         ),
-                        backgroundColor: Colors.brown,
+                        backgroundColor: Colors.orangeAccent,
                       ),
                     );
                   },

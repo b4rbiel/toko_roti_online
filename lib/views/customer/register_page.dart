@@ -40,14 +40,18 @@ class _RegisterPageState extends State<RegisterPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Logo & Judul
-              const Icon(Icons.bakery_dining, size: 80, color: Colors.brown),
+              const Icon(
+                Icons.bakery_dining,
+                size: 80,
+                color: Colors.orangeAccent,
+              ),
               const SizedBox(height: 8),
               const Text(
                 "Buat Akun Baru",
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
-                  color: Colors.brown,
+                  color: Colors.orangeAccent,
                 ),
               ),
               const SizedBox(height: 30),
@@ -57,7 +61,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: _nameController,
                 decoration: InputDecoration(
                   labelText: "Nama Lengkap",
-                  prefixIcon: const Icon(Icons.person, color: Colors.brown),
+                  prefixIcon: const Icon(
+                    Icons.person,
+                    color: Colors.orangeAccent,
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -72,7 +79,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: _emailController,
                 decoration: InputDecoration(
                   labelText: "Email",
-                  prefixIcon: const Icon(Icons.email, color: Colors.brown),
+                  prefixIcon: const Icon(
+                    Icons.email,
+                    color: Colors.orangeAccent,
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -88,7 +98,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: _passwordController,
                 decoration: InputDecoration(
                   labelText: "Password",
-                  prefixIcon: const Icon(Icons.lock, color: Colors.brown),
+                  prefixIcon: const Icon(
+                    Icons.lock,
+                    color: Colors.orangeAccent,
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
@@ -117,7 +130,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: ElevatedButton(
                   onPressed: _register,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.brown,
+                    backgroundColor: Colors.orangeAccent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -139,7 +152,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: const Text(
                   "Sudah punya akun? Masuk di sini",
                   style: TextStyle(
-                    color: Colors.brown,
+                    color: Colors.orangeAccent,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

@@ -33,7 +33,12 @@ class AdminDashboardPage extends StatelessWidget {
     );
   }
 
-  Widget _menuCard(BuildContext context, String title, IconData icon, VoidCallback onTap) {
+  Widget _menuCard(
+    BuildContext context,
+    String title,
+    IconData icon,
+    VoidCallback onTap,
+  ) {
     return InkWell(
       onTap: onTap,
       child: Card(
@@ -43,7 +48,7 @@ class AdminDashboardPage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(icon, size: 48, color: Colors.brown),
+              Icon(icon, size: 48, color: Colors.orangeAccent),
               const SizedBox(height: 8),
               Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
             ],
@@ -53,4 +58,3 @@ class AdminDashboardPage extends StatelessWidget {
     );
   }
 }
-
